@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"github.com/golang-jwt/jwt/v5"
 	"net/http"
 	"strings"
@@ -110,11 +111,9 @@ func (j *Auth) GetExpiredRefreshCookie() *http.Cookie {
 	}
 }
 
-func (j *Auth) GetTokenFromHeaderAndVerify(w http.ResponseWriter, r *http.Request) (string, *Claims, error) {
-	w.Header().Add("Vary", "Authorization")
-
+func (j *Auth) GetTokenFromHeaderAndVerify(c *gin.Context) (string, *Claims, error) {
 	// Get auth header
-	authHeader := r.Header.Get("Authorization")
+	authHeader := c.GetHeader("Authorization")
 
 	// Sanity check
 	if authHeader == "" {

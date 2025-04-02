@@ -19,6 +19,7 @@ type Config struct {
 func Load() Config {
 	var cfg Config
 
+	// TODO: read from env variables since i keep forgetting to replace the values when pushing to github
 	flag.StringVar(&cfg.DSN, "dsn", "mysql_username:mysql_password@tcp(127.0.0.1:3306)/food4student?charset=utf8mb4&parseTime=True&loc=Local", "MySQL connection string")
 	flag.StringVar(&cfg.JWTSecret, "jwt-secret", "stevejobsdieofligma", "signing secret")
 	flag.StringVar(&cfg.JWTIssuer, "jwt-issuer", "example.com", "signing issuer")

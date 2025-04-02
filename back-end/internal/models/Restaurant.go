@@ -21,6 +21,7 @@ type Restaurant struct {
 	Favorites      []Favorite     `json:"-"`
 	TotalRating    int            `json:"total_rating"`
 	AverageRating  float64        `json:"average_rating"`
+	UserID         uint           `json:"-"`
 }
 
 type Status int

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"back-end/internal/models"
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -15,6 +16,20 @@ func openDB(dsn string) (*gorm.DB, error) {
 	}
 
 	db, err := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+
+	err = db.AutoMigrate(
+		&models.User{},
+		&models.Restaurant{},
+		&models.Favorite{},
+		&models.Rating{},
+		&models.Order{},
+		&models.Variation{},
+		&models.FoodCategory{},
+		&models.FoodItem{},
+		&models.OrderItem{},
+		&models.VariationOption{},
+	)
+
 	if err != nil {
 		return nil, err
 	}

@@ -2,7 +2,6 @@ package models
 
 import (
 	"gorm.io/gorm"
-	"time"
 )
 
 type Order struct {
@@ -21,7 +20,7 @@ type Order struct {
 type OrderStatus int
 
 const (
-	Pending OrderStatus = iota
+	OrderPending OrderStatus = iota
 	Accepted
 	Delivering
 	Finished

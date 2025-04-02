@@ -4,7 +4,6 @@ import (
 	"back-end/internal/repository"
 	"back-end/internal/repository/dbrepo"
 	"database/sql"
-	"github.com/gin-gonic/gin"
 	"log"
 	"time"
 )
@@ -52,7 +51,7 @@ func main() {
 	}(mysqlDB)
 
 	// start the server
-	router := gin.Default()
+	router := app.routes()
 	log.Println("Starting server on port 8080")
 	if err := router.Run(":8080"); err != nil {
 		log.Fatal(err)
