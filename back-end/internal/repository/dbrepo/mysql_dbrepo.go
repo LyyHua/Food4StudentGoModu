@@ -54,3 +54,10 @@ func (m *MySQLDBRepo) GetRestaurant(id uint) (*models.Restaurant, error) {
 
 	return &restaurant, nil
 }
+
+func (m *MySQLDBRepo) InsertRestaurant(restaurant *models.Restaurant) error {
+	if err := m.DB.Create(restaurant).Error; err != nil {
+		return err
+	}
+	return nil
+}

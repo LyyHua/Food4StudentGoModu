@@ -11,4 +11,5 @@ type DatabaseRepo interface {
 	GetAllUsers() ([]*models.User, error)
 	GetAllRestaurants() ([]*models.Restaurant, error)
 	GetRestaurant(id uint) (*models.Restaurant, error)
+	InsertRestaurant(restaurant *models.Restaurant) error
 }

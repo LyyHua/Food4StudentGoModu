@@ -20,6 +20,7 @@ func (app *application) routes() *gin.Engine {
 	router.GET("/users", app.AllUsers)
 	router.GET("/restaurants", app.AllRestaurants)
 	router.GET("/restaurants/:id", app.RestaurantDetails)
+	router.POST("/restaurants", app.InsertRestaurant)
 	//router.GET("/restaurants/:id", app.GetRestaurant)
 
 	// Admin routes with authentication

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"back-end/internal/models"
 	"errors"
 	"github.com/gin-gonic/gin"
 	"net/http"
@@ -109,4 +110,21 @@ func (app *application) authenticate(c *gin.Context) {
 	)
 
 	app.writeJSON(c, http.StatusAccepted, tokens)
+}
+
+func (app *application) InsertRestaurant(c *gin.Context) {
+	// read json payload
+	var restaurant models.Restaurant
+	if err := app.readJSON(c, &restaurant); err != nil {
+		app.errorJSON(c, err, http.StatusBadRequest)
+		return
+	}
+
+	// insert restaurant into database
+	if err := app.DB.InsertRestaurant(&restaurant); err != nil {
+		app.errorJSON(c, err)
+		return
+	}
+
+	c.JSON(http.StatusCreated, gin.H{"status": "success", "message": "Restaurant created successfully"})
 }

@@ -8,10 +8,10 @@ USE food4student;
 -- Sample data for users
 INSERT INTO users (id, created_at, updated_at, first_name, last_name, email, password, address, phone_number)
 VALUES
-    (1, NOW(), NOW(), 'John', 'Doe', 'john@example.com', '$2a$10$8jF7sLO5Lwf6l8x2o9XC3OTQfChmUHBgA65AqZKuFxYGnki4mGvRu', '123 College St', '555-1234'),  -- password: password123
-    (2, NOW(), NOW(), 'Jane', 'Smith', 'jane@example.com', '$2a$10$8jF7sLO5Lwf6l8x2o9XC3OTQfChmUHBgA65AqZKuFxYGnki4mGvRu', '456 University Ave', '555-5678'),
-    (3, NOW(), NOW(), 'Bob', 'Johnson', 'bob@example.com', '$2a$10$8jF7sLO5Lwf6l8x2o9XC3OTQfChmUHBgA65AqZKuFxYGnki4mGvRu', '789 Dorm Lane', '555-9012'),
-    (4, NOW(), NOW(), 'Alice', 'Brown', 'alice@example.com', '$2a$10$8jF7sLO5Lwf6l8x2o9XC3OTQfChmUHBgA65AqZKuFxYGnki4mGvRu', '101 Campus Road', '555-3456');
+    (1, NOW(), NOW(), 'John', 'Doe', 'john@example.com', '$2a$10$jlFYUIV4RZ4cfAiKt/QjrOVDRz491aITLthZkSEAJ/clIgve6DHpC', '123 College St', '555-1234'),  -- password: password123
+    (2, NOW(), NOW(), 'Jane', 'Smith', 'jane@example.com', '$2a$10$jlFYUIV4RZ4cfAiKt/QjrOVDRz491aITLthZkSEAJ/clIgve6DHpC', '456 University Ave', '555-5678'),
+    (3, NOW(), NOW(), 'Bob', 'Johnson', 'bob@example.com', '$2a$10$jlFYUIV4RZ4cfAiKt/QjrOVDRz491aITLthZkSEAJ/clIgve6DHpC', '789 Dorm Lane', '555-9012'),
+    (4, NOW(), NOW(), 'Alice', 'Brown', 'alice@example.com', '$2a$10$jlFYUIV4RZ4cfAiKt/QjrOVDRz491aITLthZkSEAJ/clIgve6DHpC', '101 Campus Road', '555-3456');
 
 -- Sample data for restaurants
 INSERT INTO restaurants (id, created_at, updated_at, name, description, address, phone_number, status, logo_url, banner_url, total_rating, average_rating)
